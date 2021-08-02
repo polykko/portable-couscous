@@ -81,7 +81,7 @@ def func(t, t1, t2, a, c, d):
         
 def fitting(avg):     
     ydata = np.array(avg[0:period_len//2])            #rising phase
-    #ydata = np.array(avg[period_len//2]:period_len)  #falling phase
+    #ydata = np.array(avg[period_len//2:period_len])  #falling phase
     xdata = np.arange(len(ydata))/sampling_rate
 #   popt - array of parameters
 #   popcov - estimated covariance of popt    
@@ -102,7 +102,7 @@ avg = [np.mean(y[:,x]) for x in range(period_len)]
 
 popt, pcov = fitting(avg) 
 data = np.array(avg[0:period_len//2])               #rising phase
-#data = np.array(avg[period_len//2]:period_len)     #falling phase
+#data = np.array(avg[period_len//2:period_len])     #falling phase
 time = np.arange(len(data))/sampling_rate
 #   modelling a curve using parameters from fitting results
 model = []
